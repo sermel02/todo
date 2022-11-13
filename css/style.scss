@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #3c87ff;
+  overflow: hidden;
+}
+
+.wrapper {
+  background-color: #fff;
+  max-width: 405px;
+  margin: 135px auto;
+  border-radius: 7px;
+  padding: 28px 0;
+}
+
+.task-input {
+  height: 52px;
+  padding: 0 25px;
+  position: relative;
+
+  span {
+    position: absolute;
+    top: 50%;
+    transform: translate(17px, -50%);
+    color: #999;
+  }
+
+  input {
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    padding: 0 20px 0 53px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    outline: none;
+
+    ::placeholder {
+      color: #bfbfbf;
+    }
+  }
+}
+
+.controls,
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls {
+  padding: 18px 25px;
+  border-bottom: 1px solid #ccc;
+
+  .filters {
+    :first-child {
+      margin-left: 0;
+    }
+
+    span {
+      margin: 0 8px;
+      cursor: pointer;
+
+      &.active {
+        color: #3c87ff;
+      }
+    }
+  }
+
+  .clear-btn {
+    outline: none;
+    border: none;
+    background-color: #3c87ff;
+    color: #fff;
+    padding: 7px 13px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+.task-box {
+  margin: 20px 25px;
+
+  .task {
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 16px;
+
+    :last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+
+      input {
+        margin-right: 12px;
+      }
+
+      .checked {
+        text-decoration: line-through;
+      }
+    }
+
+    .settings {
+      cursor: pointer;
+      position: relative;
+
+      .task-menu {
+        position: absolute;
+        background-color: #fff;
+        padding: 5px 0;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        z-index: 2;
+        right: -5px;
+        bottom: -65px;
+        transform: scale(0);
+        transform-origin: top right;
+        transition: all 0.2s ease;
+
+        li {
+          height: 25px;
+          font-size: 16px;
+          margin-bottom: 2px;
+          justify-content: flex-start;
+          padding: 17px 15px;
+
+          :last-child {
+            margin-bottom: 0;
+          }
+
+          &:hover {
+            background-color: #f5f5f5;
+          }
+
+          span {
+            margin-right: 8px;
+          }
+        }
+
+        &.show {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
